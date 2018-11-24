@@ -3,7 +3,13 @@ P3C Interface. Make sure you have Saturn Wallet installed. This can be run local
 
 1. ```npm install -g live-server```
 2. Run ```live-server``` from directory.
-3. Navigae to `/interact.html`.
+3. Navigate to `/interact.html`.
+
+# Want to create a fork with a permanent Masternode?
+1. Go to `/lib/masternode.js`
+2. Replace null in `var permanentMasternode = null` with your masternode.
+3. Replace the logo and title in `interact.html`.
+4. Replace the emerald color scheme in `main.css`.
 
 # Development tips
 - I use http://remix.ethereum.org/ to deploy smart contracts

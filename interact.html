@@ -17,15 +17,16 @@
     <link rel="stylesheet" href="css/themes/semantic.min.css" />
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="css/themes/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/jquery.qtip.min.css">
+    <link rel="stylesheet" href="css/jquery.qtip.min.css">
     <link rel="icon" type="image/png" href="img/whale.png">
 </head>
 
 <body>
     <div class="ui large inverted stackable menu gradient emerald" style="border-radius:0px !important;">
         <div class="ui container">
+            <!-- THIS IS WHERE THE LOGO AND TITLE IS -->
             <a class="header item" href="/">
-                <img src="img/whale.svg" class="ui mini image" />
+                <img id="logo" src="img/whale.svg" class="ui mini image" />
                 <h2 class="title">P3C.io</h2>
             </a>
             <div class="right menu custom-computer only">
@@ -254,7 +255,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="ui segments masternode hidden">
+                <div id="masternode" class="ui segments masternode hidden">
                     <div class="ui secondary segment">
                         <div class="link masternode">
                             <a id="masternodeLink" href="/?mn=0x">https://p3c.io/index.html?mn=0x123456</a>
@@ -358,8 +359,9 @@
 
     <script src="lib/contracts.js"></script>
     <script src="lib/farm.js"></script>
-    <script src="lib/farm-wallet.js"></script>
+    <script src="lib/masternode.js"></script>
     <script src="lib/interact.js"></script>
+    <script src="lib/farm-wallet.js"></script>
 </body>
 
 </html>
