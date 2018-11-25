@@ -28,7 +28,7 @@
         <div class="ui container">
             <!-- THIS IS WHERE THE LOGO AND TITLE IS -->
             <a class="header item" href="/">
-                <img id="logo" src="img/whale.svg" class="ui mini image" />
+                <img id="logo" src="img/logo.svg" class="ui mini image" />
                 <h2 class="title">P3C.io</h2>
             </a>
             <div class="right menu custom-computer only">
@@ -293,27 +293,26 @@
                         <h4 class="ui header">
                             <i class="circular inverted blue exchange alternate icon"></i>
                             <div class="content">
-                                Transfer
-                                <div class="sub header">Transfer your P3C to another account.</div>
+                                <div class="sub header"><b>Transfer</b> your P3C to another account. <i>Give tips in P3C!</i></div>
                             </div>
                         </h4>
                     </div>
                     <div class="ui segment">
                         <form class="ui form">
                             <div class="field">
-                                <input type="text" id="transferAddress" placeholder="Address..">
+                                <input type="text" id="transferAddress" placeholder="Destination Address">
                             </div>
                         </form>
                     </div>
                     <div class="ui segment">
                         <form class="ui form">
                             <div class="field">
-                                <input type="text" id="transferTokenCount" placeholder="P3C Tokens..">
+                                <input type="text" id="transferTokenCount" placeholder="P3C Tokens">
                             </div>
                         </form>
                     </div>
                     <div class="ui segment">
-                        <span class="approx">Type in a valid address and token amount..</span>
+                        My address (Send P3C here): <span id="myCropAddress" class="approx"></span>
                     </div>
                     <div class="ui segment">
                         <button id="transfer" class="ui right labeled large icon blue fluid button">
