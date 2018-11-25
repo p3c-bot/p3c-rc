@@ -123,6 +123,9 @@ body {
     cursor: default;
 }
 
+.logo {
+    border-radius: 50%;
+}
 
 /*
     SCHEMA
