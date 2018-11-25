@@ -7,9 +7,14 @@ P3C Interface. Make sure you have Saturn Wallet installed. This can be run local
 
 # Want to create a fork with a permanent Masternode?
 1. Go to `/lib/masternode.js`
-2. Replace null in `var permanentMasternode = null` with your masternode.
+2. Replace the address in `var permanentMasternode = 0x0000000000000000000000000000000000000000` with your masternode address. This can be found for your account on the main p3c.io wallet in the masternode box. 
 3. Replace the logo and title in `interact.html`.
 4. Replace the emerald color scheme in `main.css`.
+5. Turn on Github pages by going to the settings of the new forked repository.
+
+![replace](/doc-assets/turnon.png)
+
+You're done!
 
 # Development tips
 - I use http://remix.ethereum.org/ to deploy smart contracts
