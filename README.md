@@ -12,7 +12,7 @@ A Masternode entitles you to 33% of the 10% community fee on buying/selling/rein
  ![fork](/doc-assets/fork.png)
 
 1. Go to `/lib/masternode.js`
-1. Replace the address in `var permanentMasternode = 0x0000000000000000000000000000000000000000` with your crop address. This can be found for your account on the main p3c.io wallet in the reflink box. 
+1. Replace the address in `var permanentMasternode = "0x0000000000000000000000000000000000000000"` with your crop address. This can be found for your account on the main p3c.io wallet in the reflink box. 
 ![crop](/doc-assets/crop.png)
 1. Replace the logo and title in `interact.html`.
 1. Replace the emerald color scheme in `main.css`.
