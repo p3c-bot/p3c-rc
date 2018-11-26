@@ -234,6 +234,14 @@ i.blue.icon {
     margin-top: 20px;
 }
 
+.etc-small {
+    max-width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
 .qtip-content {
     background-color: white;
 }
