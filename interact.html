@@ -392,9 +392,12 @@
                     </div>
                     <div class="ui secondary segment">
                         <div class="link masternode">
-                            <a id="masternodeLink" href="/?mn=0x">https://p3c.io/index.html?mn=0x123456</a>
+                            <a id="masternodeLink" href="/?mn=0x">https://p3c.io/index.html?mn=0x123456</a> <button id="copyMNButton" class="ui primary basic button copy" data-clipboard-text="">
+                            <i class="clipboard icon"></i>
+                            </button>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -404,11 +407,17 @@
                         <h4 class="ui header">
                             <i class="circular inverted blue exchange alternate icon"></i>
                             <div class="content">
-                                <div class="sub header"><b>No-fee Transfer</b> your P3C to another account. <i>Give
+                                <div class="sub header"><b>No-fee Transfer</b> your P3C to another account.<i>Give
                                         tips in
                                         P3C!</i></div>
                             </div>
                         </h4>
+                    </div>
+                    <div class="ui segment">
+                        My P3C Address: <span id="myCropAddress" class="approx"></span> <button id="copyAddressButton"
+                            class="ui primary basic button copy" data-clipboard-text="">
+                            <i class="clipboard icon"></i>
+                        </button>
                     </div>
                     <div class="ui segment">
                         <form class="ui form">
@@ -423,16 +432,6 @@
                                 <input type="text" id="transferTokenCount" placeholder="P3C Tokens">
                             </div>
                         </form>
-                    </div>
-                    <div class="ui segment">
-                        My address (Send P3C here): <span id="myCropAddress" class="approx"></span>
-                        <!-- Target -->
-                        <input id="foo" value="https://github.com/zenorocha/clipboard.js.git">
-
-                        <!-- Trigger -->
-                        <button class="btn" data-clipboard-target="#foo">
-                            <img src="assets/clippy.svg" alt="Copy to clipboard">
-                        </button>
                     </div>
                     <div class="ui segment">
                         <button id="transfer" class="ui right labeled large icon blue fluid button">

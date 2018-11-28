@@ -242,6 +242,11 @@ i.blue.icon {
     margin-top: 5px;
 }
 
+.ui.primary.basic.button.copy {
+    padding-left: 7px;
+    padding-right: 0px;
+}
+
 .qtip-content {
     background-color: white;
 }
