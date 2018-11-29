@@ -259,6 +259,14 @@ i.blue.icon {
     padding-top: 10px;
 }
 
+.saturn {
+    max-width: 40% !important;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0 auto;
+}
+
 /* Mobile */
 @media only screen and (max-width: 767px) {
 
