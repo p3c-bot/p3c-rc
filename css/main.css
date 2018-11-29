@@ -268,7 +268,7 @@ i.blue.icon {
 }
 
 /* Mobile */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 989px) {
 
     [class*="mobile hidden"],
     [class*="tablet only"]:not(.mobile),
@@ -281,7 +281,7 @@ i.blue.icon {
 }
 
 /* Tablet / iPad Portrait */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 990px) and (max-width: 991px) {
 
     [class*="mobile only"]:not(.tablet),
     [class*="tablet hidden"],
