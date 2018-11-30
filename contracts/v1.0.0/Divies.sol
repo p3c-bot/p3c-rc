@@ -11,38 +11,27 @@
  *        \  \::/        /__/:/   \  \:\__|:|     /__/:/    \  \:\/:/     \__\/ /:/  
  *         \__\/         \__\/     \__\::::/      \__\/      \  \::/        /__/:/   
  *                                     ~~~~                   \__\/         \__\/    
- * v RC
+ * v 1.0.0
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+ * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+ * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * 
  * -> What?
  * P3C div interface. Send ETC here, and then call distribute to give to P3C holders.
- * See ETH: 0xC0c001140319C5f114F8467295b1F22F86929Ad0 for original.
- * -> What is different from original:
- * Hardcode divs to 75%.
- * Removed requirment of humans.
- * Removed unecessary rate limiting.
- * Removed unecessary distribution parameters.
- * 
- *         ┌──────────────────────────────────────────────────────────────────────┐
- *         │ Divies!, is a contract that adds an external dividend system to P3C. │
- *         │ All ETC sent to this contract, can be distributed to P3C holders.    │
- *         └──────────────────────────────────────────────────────────────────────┘
- *                                ┌────────────────────┐
- *                                │ Setup Instructions │
- *                                └────────────────────┘
- * (Step 1) import this contracts interface into your contract
- * 
- *    import "./DiviesInterface.sol";
- * 
- * (Step 2) set up the interface and point it to this contract
- * 
- *    DiviesInterface private Divies = DiviesInterface(0x073340cc5d03b221eec5d72fb2fb9dfcea6f72ae);
+ * Distributes 75% of the contract balance.
+ *
  *                                ┌────────────────────┐
  *                                │ Usage Instructions │
  *                                └────────────────────┘
- * call as follows anywhere in your code:
+ * Transfer funds directly to this contract. These will be distributed via the distribute function.
  *   
- *    Divies.deposit.value(amount)();
- *          ex:  Divies.deposit.value(232000000000000000000)();
+ *    address diviesAddress = 0xd1A231ae68eBE7Aec3ECDAEAC4C0776eB525D969;
+ *    diviesAddress.transfer(232000000000000000000); 
+ * 
  */
+ 
 interface HourglassInterface {
     function() payable external;
     function buy(address _playerAddress) payable external returns(uint256);
@@ -60,7 +49,7 @@ contract Divies {
     using SafeMath for uint256;
     using UintCompressor for uint256;
 
-    HourglassInterface constant P3Ccontract_ = HourglassInterface(0x80DAfcF47A0199b71C187C84BA68Cfb999f2A1ef);
+    HourglassInterface constant P3Ccontract_ = HourglassInterface(0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac);
     
     uint256 public pusherTracker_ = 100;
     mapping (address => Pusher) public pushers_;
