@@ -10,7 +10,7 @@ pragma solidity ^0.4.21;
  *    | $$  | $$ \$$    $$| $$| $$  | $$| $$  \$ | $$ \$$    $$| $$  \$$\ \$$     \| $$      
  *     \$$   \$$  \$$$$$$$ \$$ \$$   \$$ \$$      \$$  \$$$$$$$ \$$   \$$  \$$$$$$$ \$$      
  * 
- *   v RC         
+ *   v 1.0.0         
  *  "Nobody gets left behind"    
  * 
  *  What?
@@ -42,7 +42,7 @@ contract RainMaker {
 
     address public oldDiviesAddress = 0x073340cC5D03B221EEc5D72Fb2fB9DFCeA6F72ae;
     address public oldP3CAddress = 0xDF9AaC76b722B08511A4C561607A9bf3AfA62E49;
-    address public currentP3CAddress = 0xaE5433263a626F397fED88421CC85FfD22BBC8dD;
+    address public currentP3CAddress = 0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac;
    
     uint256 public contractRatio = 10000;
     uint256 public oldBalance;

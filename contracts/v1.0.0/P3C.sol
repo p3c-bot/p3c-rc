@@ -10,7 +10,7 @@ pragma solidity ^0.4.20;
  *           _\/\\\_____________\///\\\\\\\\\/______\////\\\\\\\\\_ 
  *            _\///________________\/////////___________\/////////__
  * 
- * v RC
+ * v 1.0.0
  * P3C - Planetary Prosperity Project
  * 
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
@@ -73,16 +73,13 @@ contract Hourglass {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = "P3CvRC";
-    string public symbol = "P3CvRC";
+    string public name = "P3Cv1.0.0";
+    string public symbol = "P3C";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 10;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
     uint256 constant internal tokenPriceIncremental_ = 0.00000001 ether;
     uint256 constant internal magnitude = 2**64;
-    
-    // masternodes for all.
-    uint256 public stakingRequirement = 0;
     
    /*================================
     =            DATASETS            =
@@ -457,7 +454,7 @@ contract Hourglass {
         tokenBalanceLedger_[_customerAddress] = SafeMath.add(tokenBalanceLedger_[_customerAddress], _amountOfTokens);
         
         // Tells the contract that the buyer doesn't deserve dividends for the tokens before they owned them;
-        //really i know you think you do but you don't
+        // really i know you think you do but you don't
         int256 _updatedPayouts = (int256) ((profitPerShare_ * _amountOfTokens) - _fee);
         payoutsTo_[_customerAddress] += _updatedPayouts;
         
