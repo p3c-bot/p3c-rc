@@ -45,7 +45,7 @@ contract Farm {
    * @dev Creates a crop with an optional payable value
    * @param _playerAddress referral address.
    */
-  function createCrop(address _playerAddress) public payable returns (address) {
+  function createCrop(address _playerAddress, bool _selfBuy) public payable returns (address) {
       // we can't already have a crop
       require(crops[msg.sender] == address(0));
       
@@ -57,7 +57,11 @@ contract Farm {
 
       // if we sent some value with the transaction, buy some p3c for the crop.
       if (msg.value != 0){
-        Crop(cropAddress).buy.value(msg.value)(_playerAddress);
+        if (_selfBuy){
+            Crop(cropAddress).buy.value(msg.value)(cropAddress);
+        } else {
+            Crop(cropAddress).buy.value(msg.value)(_playerAddress);
+        }
       }
       
       return cropAddress;
@@ -149,7 +153,7 @@ contract Crop {
    * @dev Buy P3C tokens
    * @param _playerAddress referral address.
    */
-  function buy(address _playerAddress) external payable onlyOwner() {
+  function buy(address _playerAddress) external payable {
     Hourglass(p3cAddress).buy.value(msg.value)(_playerAddress);
   }
 
@@ -189,7 +193,9 @@ contract Crop {
    * @param _amountOfTokens amount of tokens to send.
    */
   function transfer(address _toAddress, uint256 _amountOfTokens) external onlyOwner() returns (bool) {
-    withdraw();
+    if (Hourglass(p3cAddress).myDividends(true) > 0){
+        withdraw();
+    }
     return Hourglass(p3cAddress).transfer(_toAddress, _amountOfTokens);
   }
 
@@ -199,5 +205,12 @@ contract Crop {
    */
   function cropDividends(bool _includeReferralBonus) external view returns (uint256) {
     return Hourglass(p3cAddress).myDividends(_includeReferralBonus);
+  }
+  
+  /**
+   * @dev Get number of tokens for this crop.
+   */
+  function cropTokens() external view returns (uint256) {
+    return Hourglass(p3cAddress).myTokens();
   }
 }
