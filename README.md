@@ -3,7 +3,7 @@ P3C Interface. Make sure you have Saturn Wallet installed. This can be run local
 
 1. ```npm install -g live-server```
 2. Run ```live-server``` from directory.
-3. Navigate to `/interact.html`.
+3. Navigate to `/use.html`.
 
 # Want to create a fork with a permanent Masternode?
 A Masternode entitles you to 33% of the 10% community fee on buying/selling/reinvesting. You can create a **custom** branded site that funnels all ETC through your Masternode.
@@ -14,7 +14,7 @@ A Masternode entitles you to 33% of the 10% community fee on buying/selling/rein
 1. Go to `/lib/masternode.js`
 1. Replace the address in `var permanentMasternode = "0x0000000000000000000000000000000000000000"` with your crop address. This can be found for your account on the main p3c.io wallet in the reflink box. 
 ![crop](/doc-assets/crop.png)
-1. Replace `img/logo.svg` and title in `/interact.html`.
+1. Replace `img/logo.svg` and title in `/use.html`.
 1. Replace the custom color scheme in `/css/custom.css`.
 1. Turn on Github pages by going to the settings of the new forked repository.
 
